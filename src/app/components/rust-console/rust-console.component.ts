@@ -1,4 +1,5 @@
 import {AfterViewInit, Component, ElementRef, Input, OnInit, Renderer2, ViewChild} from '@angular/core';
+import PythonJson from '../../../assets/challenges/python.json';
 
 @Component({
   selector: 'app-rust-console',
@@ -61,6 +62,11 @@ export class RustConsoleComponent implements OnInit, AfterViewInit {
 
         }
         this.consoleResult = message;
+        if(message == PythonJson.questions[0].result_console) {
+          console.log("You get a badge");
+        } else {
+          console.log("You did it wrong");
+        }
         this.isLoading = false;
         console.log(answer)
       } catch (err) {
