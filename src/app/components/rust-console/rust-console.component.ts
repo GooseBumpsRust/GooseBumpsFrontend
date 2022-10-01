@@ -69,6 +69,11 @@ export class RustConsoleComponent implements OnInit, AfterViewInit {
         }
         this.isLoading = false;
         console.log(answer)
+
+        setTimeout(function(){
+          document.getElementById("button-modal")?.click()
+        },1500);
+
       } catch (err) {
         console.log(err)
       }

@@ -47,6 +47,8 @@ textarea {
   border-radius: 5px;
   border: 1px solid #ccc;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 20px;
 }
 
 .wrap {
@@ -103,9 +105,9 @@ textarea {
   max-width: 90%;
   pointer-events: none;
   position: absolute;
-  top: 1200px;
+  top: 1320px;
   transform: translate(-50%, -50%);
-  width: 30em;
+  width: 60em;
   text-align: left;
   max-height: 90vh;
   display: flex;
@@ -222,6 +224,7 @@ code {
   > p {
     margin-top: 2em;
     margin-bottom: 2em;
+    text-align: center;
   }
 
   sup {
@@ -230,4 +233,15 @@ code {
     opacity: 0.5;
     position: relative;
   }
+}
+
+.badge_txt {
+  font-family: 'Press Start 2P';
+  font-size: 19px;
+  margin-bottom: 10px;
+}
+
+.badge_title {
+  font-family: 'Press Start 2P';
+  margin-bottom: 10px;
 }
