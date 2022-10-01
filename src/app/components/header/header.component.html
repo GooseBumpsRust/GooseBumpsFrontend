@@ -4,7 +4,8 @@
   </div>
 
   <div class="wallet-data-container">
-    <span>{{account}}</span>
+    <span class="wallet-label">WALLET ID:</span>
+    <span class="wallet-account">{{account}}</span>
     <button  (click)="disconnectWeb3()" *ngIf="account">disconnect wallet</button>
   </div>
 

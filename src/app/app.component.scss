@@ -10,3 +10,27 @@
   }
 }
 
+button {
+  width: 440px;
+  height: 105px;
+  font-family: 'Press Start 2P';
+  font-size: 17px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000;
+  background-color: #fff;
+  border: none;
+  border-radius: 10px;
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  animation: blinker 1s linear infinite;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0.6;
+  }
+}
