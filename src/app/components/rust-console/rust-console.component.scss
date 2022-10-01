@@ -62,7 +62,7 @@ textarea {
 .button {
   width: 140px;
   height: 45px;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Press Start 2P';
   font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 2.5px;
@@ -78,8 +78,8 @@ textarea {
 }
 
 .button:hover {
-  background-color: #2EE59D;
-  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  background-color: #cb2626;
+  box-shadow: 0px 15px 20px rgba(234, 25, 49, 0.4);
   color: #fff;
   transform: translateY(-7px);
 }
@@ -105,7 +105,7 @@ textarea {
   max-width: 90%;
   pointer-events: none;
   position: absolute;
-  top: 1320px;
+  top: 1420px;
   transform: translate(-50%, -50%);
   width: 60em;
   text-align: left;

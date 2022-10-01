@@ -2,11 +2,11 @@
 
 <ng-container *ngIf="account">
   <router-outlet></router-outlet>
-  <button (click)="mintNFT()" >Mint </button>
+  <!-- <button (click)="mintNFT()" >Mint </button> -->
 
 </ng-container>
 <ng-container *ngIf="!account" >
   <div class="connect-wallet-container">
-    <button class="connect-wallet-btn" (click)="loadWeb3()" *ngIf="!account">connect wallet</button>
+    <button class="connect-wallet-btn" (click)="loadWeb3()" *ngIf="!account">connect with wallet</button>
   </div>
 </ng-container>
