@@ -21,7 +21,7 @@ jobs:
       run: npm install
 
     - name: Build
-      run: npm run build
+      run: npm run build:prod
 
     - name: Deploy
       if: success()
@@ -30,3 +30,15 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: dist/goose-bumps-frontend
         enable_jekyll: true
+
+    - name: Build
+      run: npm run build:prod:gh
+
+    - name: Deploy App
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        deploy_key: ${{ secrets.DEPLOY_KEY }}
+        external_repository: goosebumpsrust/goosebumpsrust.github.io
+        publish_branch: gh-pages
+        publish_dir: dist/goose-bumps-frontend
+        keep_files: true

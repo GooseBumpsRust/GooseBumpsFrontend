@@ -5,6 +5,8 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:prod": "ng build --configuration production --base-href https://goosebumpsrust.github.io/GooseBumpsFrontend/",
+    "build:prod:gh": "ng build --configuration production --base-href https://goosebumpsrust.github.io/",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },

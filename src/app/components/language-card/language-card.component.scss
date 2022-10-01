@@ -1,14 +1,16 @@
 .card-container{
-  width: 500px;
-  height: 500px;
+  width: 300px;
+  height: 300px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: #fff;
+  background-color: #f1ecec;
+  opacity: 0.8;
   box-shadow: 0 0 10px 0 rgba(0,0,0,0.1);
   border-radius: 5px;
   margin-bottom: 20px;
+  border: 1px solid #000;
   cursor: pointer;
   img{
     width: 100px;

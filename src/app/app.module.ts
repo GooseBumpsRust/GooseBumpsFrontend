@@ -19,6 +19,7 @@ import 'prismjs/components/prism-typescript';
 import 'prismjs/components/prism-scss';
 import {SafePipe} from "./helpers/safe-pipe";
 import {FormsModule} from "@angular/forms";
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import {FormsModule} from "@angular/forms";
     RustConsoleComponent,
     HomepageComponent,
     LearningPageComponent,
-    SafePipe
+    SafePipe,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
