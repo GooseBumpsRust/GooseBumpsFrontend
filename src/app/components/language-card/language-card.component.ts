@@ -27,6 +27,9 @@ export class LanguageCardComponent implements OnInit {
   }
 
   goTo(challenge_id: string) {
+    if(this.disabled) {
+    return;
+    }
     this.router.navigate(['/challenge', challenge_id]);
   }
 }

@@ -1,4 +1,4 @@
-<div class="card-container" (click)="goTo(challenge_id)" >
+<div class="card-container" (click)="goTo(challenge_id)"  [class.disabled]="disabled">
   <img [src]="iconPath" alt="" />
   <span class="card-title">{{ title }}</span>
 </div>

@@ -18,7 +18,7 @@ export class RustConsoleComponent implements OnInit, AfterViewInit {
   constructor(private renderer:Renderer2) { }
 
   ngOnInit(): void {
-    this.codeUrl = "https://play.rust-lang.org/?version=stable&mode=debug&edition=2021&code=" +this.code
+    this.codeUrl = "https://play.rust-lang.org/?version=stable&mode=debug&edition=2021&code=" + this.code
   }
 
   ngAfterViewInit(): void {

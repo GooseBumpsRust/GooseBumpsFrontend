@@ -17,7 +17,7 @@ import 'prismjs/components/prism-python.min';
 import 'prismjs/components/prism-rust.min';
 import 'prismjs/components/prism-typescript';
 import 'prismjs/components/prism-scss';
-import {SafePipe} from "./helpers/safe-pipe";
+import {SafePipe} from "./utils/safe-pipe";
 import {FormsModule} from "@angular/forms";
 import { HeaderComponent } from './components/header/header.component';
 

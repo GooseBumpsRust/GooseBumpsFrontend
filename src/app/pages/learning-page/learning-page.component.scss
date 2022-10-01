@@ -1,6 +1,5 @@
 
 .title{
-  margin-top: 100px;
   margin-bottom: 50px;
   text-align: center;
 }
@@ -11,6 +10,8 @@
   justify-content: space-around;
   align-items: flex-start;
   height: calc(100vh - 50px);
+  margin-top: -120px;
+
 
   > div {
     width: 50%;
@@ -20,6 +21,4 @@
 
   }
 }
-.chapter {
-    margin: 220px 0px 0px 55px;
-}
+

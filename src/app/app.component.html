@@ -1,2 +1,12 @@
-<app-header></app-header>
-<router-outlet></router-outlet>
+<app-header [account]="account" (disconnectEvent)="disconnectWeb3()"></app-header>
+
+<ng-container *ngIf="account">
+  <router-outlet></router-outlet>
+  <button (click)="mintNFT()" >Mint </button>
+
+</ng-container>
+<ng-container *ngIf="!account" >
+  <div class="connect-wallet-container">
+    <button class="connect-wallet-btn" (click)="loadWeb3()" *ngIf="!account">connect wallet</button>
+  </div>
+</ng-container>

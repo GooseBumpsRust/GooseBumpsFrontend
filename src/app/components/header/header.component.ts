@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -6,10 +6,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+  @Input()
+  account: any;
 
-  constructor() { }
+  @Output() disconnectEvent = new EventEmitter();
+
+
+  constructor() {
+  }
 
   ngOnInit(): void {
+  }
+
+  disconnectWeb3() {
+    this.disconnectEvent.emit();
+
   }
 
 }
