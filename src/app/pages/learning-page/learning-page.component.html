@@ -1,0 +1,17 @@
+<div>
+  <h1>CHAPTER TITLE</h1>
+</div>
+<div class="flex-container">
+  <div class="snippet-challenge-container">
+    <app-snippet [code]="code_challenge" language="javascript"></app-snippet>
+  </div>
+  <div class="snippet-rust-container">
+    <app-snippet [code]="code_rust"></app-snippet>
+  </div>
+  <div class="question-container">
+    <app-question [question]="question"></app-question>
+  </div>
+  <div class="console-container">
+    <app-rust-console></app-rust-console>
+  </div>
+</div>

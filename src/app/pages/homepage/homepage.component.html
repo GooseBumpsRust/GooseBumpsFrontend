@@ -1,0 +1,3 @@
+<div class="flex-container">
+  <app-language-card *ngFor="let language of languagesList" [iconPath]="language?.iconPath" [title]="language?.title" [disabled]="language?.disabled" [challenge_id]="language?.challenge_id"></app-language-card>
+</div>

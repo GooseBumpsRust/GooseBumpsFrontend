@@ -1,0 +1,23 @@
+.card-container{
+  width: 500px;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #fff;
+  box-shadow: 0 0 10px 0 rgba(0,0,0,0.1);
+  border-radius: 5px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  img{
+    width: 100px;
+    object-fit: cover;
+    margin-bottom: 20px;
+  }
+  span{
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+}
