@@ -7,8 +7,6 @@ const routes: Routes = [
   { path: '', component: HomepageComponent },
   { path: 'challenge/:challenge_id/:chapter_id', component: LearningPageComponent },
   { path: 'challenge/:challenge_id', component: LearningPageComponent }
-  { path: 'reward', component: LearningPageComponent }
-
 
 ];
 
