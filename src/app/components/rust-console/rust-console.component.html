@@ -1,1 +1,7 @@
-<p>rust-console works!</p>
+<textarea [(ngModel)]='code' rows="10" cols="50" name="console" ></textarea>
+<div class="result-container" *ngIf="!isLoading || !consoleResult">
+  <span>{{consoleResult}}</span>
+  <div class="loader"  *ngIf="isLoading" ></div>
+
+</div>
+<button (click)="runScript()">run</button>

@@ -17,6 +17,8 @@ import 'prismjs/components/prism-python.min';
 import 'prismjs/components/prism-rust.min';
 import 'prismjs/components/prism-typescript';
 import 'prismjs/components/prism-scss';
+import {SafePipe} from "./helpers/safe-pipe";
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -27,11 +29,13 @@ import 'prismjs/components/prism-scss';
     QuestionComponent,
     RustConsoleComponent,
     HomepageComponent,
-    LearningPageComponent
+    LearningPageComponent,
+    SafePipe
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

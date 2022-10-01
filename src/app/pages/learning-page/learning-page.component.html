@@ -1,5 +1,5 @@
 <div>
-  <h1>CHAPTER TITLE</h1>
+  <h1 class="title">{{title}}</h1>
 </div>
 <div class="flex-container">
   <div class="snippet-challenge-container">
@@ -12,6 +12,6 @@
     <app-question [question]="question"></app-question>
   </div>
   <div class="console-container">
-    <app-rust-console></app-rust-console>
+    <app-rust-console [code]='init_console'></app-rust-console>
   </div>
 </div>
