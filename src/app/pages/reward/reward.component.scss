@@ -1,0 +1,36 @@
+
+
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .waiting-card {
+    background-color: #f0b2b2;
+    border-radius: 7px;
+    border: 1px solid #ccc;
+    box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px;
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+    padding: 40px;
+    justify-content: space-around;
+    align-items: center;
+    width: 350px;
+    .loader {
+      border: 16px solid #f3f3f3; /* Light grey */
+      border-top: 16px solid #3498db; /* Blue */
+      border-radius: 50%;
+      width: 120px;
+      height: 120px;
+      animation: spin 2s linear infinite;
+    }
+    span {
+
+    }
+  }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

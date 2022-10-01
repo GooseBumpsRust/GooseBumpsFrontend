@@ -1,0 +1,7 @@
+<div class="main-container">
+  <div class="waiting-card">
+    <div class="loader" *ngIf="isLoading"></div>
+    <span *ngIf="isLoading">NTF minting</span>
+    <button *ngIf="!isLoading" (click)="goToOpenSea()"> see your NFT on opensea</button>
+  </div>
+</div>

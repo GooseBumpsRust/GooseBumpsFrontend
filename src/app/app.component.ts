@@ -3,6 +3,7 @@ import Web3 from 'web3';
 import {Signer, utils, providers, Wallet, Contract, Event} from 'ethers';
 import {environment} from "../environments/environment";
 import * as contractAbi from './utils/contractABI.json';
+import {CoreService} from "./core.service";
 
 declare let window: any;
 
@@ -17,12 +18,12 @@ export class AppComponent {
 
   CONTRACT_ADDRESS = environment.CONTRACT_ADDRESS;
   networkChainId = environment.networkChainId;
-  account: string | undefined;
+  account: string= '';
   isInGoodNetwork: boolean = false;
   value: any;
   waves: any[] = [];
 
-  constructor(private cdr: ChangeDetectorRef) {
+  constructor(private cdr: ChangeDetectorRef, private coreService: CoreService) {
     window.ethereum.on('accountsChange', (accounts: any) => {
       console.log(accounts);
     })
@@ -42,6 +43,8 @@ export class AppComponent {
       window.web3 = new Web3(window.ethereum.currentProvider);
       let accounts = await window.ethereum.request({method: "eth_requestAccounts"});
       this.account = accounts[0]
+      this.coreService.account = this.account;
+      this.coreService.createUser(this.account)
       console.log('account', accounts[0])
       this.checkIfWalletIsConnected();
 
@@ -82,7 +85,7 @@ export class AppComponent {
       method: "eth_requestAccounts",
       params: [{eth_accounts: {}}]
     }).then(() => {
-      this.account = undefined;
+      this.account = '';
       this.isInGoodNetwork = false;
     })
   }

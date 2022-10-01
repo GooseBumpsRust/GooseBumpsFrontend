@@ -1,5 +1,8 @@
 import {AfterViewInit, Component, ElementRef, Input, OnInit, Renderer2, ViewChild} from '@angular/core';
 import PythonJson from '../../../assets/challenges/python.json';
+import {Router} from "@angular/router";
+import {MatDialog} from "@angular/material/dialog";
+import {SuccessModalComponent} from "../../modals/success-modal/success-modal.component";
 
 @Component({
   selector: 'app-rust-console',
@@ -16,7 +19,7 @@ export class RustConsoleComponent implements OnInit, AfterViewInit {
   isLoading: boolean = false;
   consoleResult:string = "";
 
-  constructor(private renderer:Renderer2) { }
+  constructor(private router: Router, public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.codeUrl = "https://play.rust-lang.org/?version=stable&mode=debug&edition=2021&code=" + this.code
@@ -59,7 +62,9 @@ export class RustConsoleComponent implements OnInit, AfterViewInit {
           message = answer.error;
         } else {
           message = answer.result
-
+          setTimeout(() =>{
+            this.openModal();
+          },1500);
         }
         this.consoleResult = message;
         if(message == PythonJson.questions[0].result_console) {
@@ -70,9 +75,7 @@ export class RustConsoleComponent implements OnInit, AfterViewInit {
         this.isLoading = false;
         console.log(answer)
 
-        setTimeout(function(){
-          document.getElementById("button-modal")?.click()
-        },1500);
+
 
       } catch (err) {
         console.log(err)
@@ -81,4 +84,12 @@ export class RustConsoleComponent implements OnInit, AfterViewInit {
 
 
 
+  openModal() {
+    const dialogRef = this.dialog.open(SuccessModalComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
 }
+

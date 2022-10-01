@@ -1,9 +1,10 @@
 
 .title{
-  margin-bottom: 50px;
   text-align: center;
   color: #ddd;
   text-shadow: 4px 4px #ff0000;
+  margin-top: -80px;
+
 }
 .flex-container{
   display: flex;
@@ -12,7 +13,6 @@
   justify-content: space-around;
   align-items: flex-start;
   height: calc(100vh - 50px);
-  margin-top: -120px;
 
 
   > div {

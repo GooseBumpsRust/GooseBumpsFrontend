@@ -3,9 +3,9 @@
     {
       "title": "Chapter 1.x - Basic Functions: Loops",
       "code_challenge": "Let's take a closer look at how we have solved loops in python so far\n---------------------------------------------------------------\n\n fruits = ['apple', 'banana', 'cherry'] \n\n for x in fruits: \n \u200B\u200B print(x) \n\n\n RESULT\n--------------------------------------------------------------- \napple\n banana\ncherry",
-      "code_rust":  "And now let's take a closer look at what it might look like here within RUST\n---------------------------------------------------------------\n\n let fruits = &['apples', 'banana', 'cherry'];\n\nfor fruit in fruits {\n \u200B \u200B \u200B println!(fruit);\n}",
+      "code_rust":  "And now let's take a closer look at what it might look like here within RUST\n---------------------------------------------------------------\n\n let fruits = &['apples', 'banana', 'cherry'];\n\nfor fruit in fruits {\n \u200B \u200B \u200B println!(\"{} ,\",fruit);\n}\n\n\n RESULT\n--------------------------------------------------------------- \n apple, banana, cherry",
       "question": "So now a task for you to try out a loop in RUST and test it yourself right away. \n\n Make a loop that counts from 1 to 10 and prints it to the console. Make sure that you choose everything correctly in the declaration of the variable. \n\nTake good care of the output also, it's not so simple what you expect 😎",
-      "init_console": "fn main() {let mut i = 1; while i <= 10 { print!(\"{:#?}\", i);i = i + 1; } }",
+      "init_console": "fn main() { \n let mut i = 1; \n while i <= 10 { \n print!(\"{:#?}\", i);i = i + 1; \n} \n}",
       "result_console": "12345678910",
       "badge_name": "Badge Beginner",
       "badge_description": "Beginner Bage for Basic Functions: Loops",

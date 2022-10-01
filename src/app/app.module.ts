@@ -7,7 +7,7 @@ import { MenuComponent } from './components/menu/menu.component';
 import { LanguageCardComponent } from './components/language-card/language-card.component';
 import { SnippetComponent } from './components/snippet/snippet.component';
 import { QuestionComponent } from './components/question/question.component';
-import { RustConsoleComponent } from './components/rust-console/rust-console.component';
+import { RustConsoleComponent} from './components/rust-console/rust-console.component';
 import { HomepageComponent } from './pages/homepage/homepage.component';
 import { LearningPageComponent } from './pages/learning-page/learning-page.component';
 
@@ -20,6 +20,11 @@ import 'prismjs/components/prism-scss';
 import {SafePipe} from "./utils/safe-pipe";
 import {FormsModule} from "@angular/forms";
 import { HeaderComponent } from './components/header/header.component';
+import { RewardComponent } from './pages/reward/reward.component';
+import {HttpClientModule} from "@angular/common/http";
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import {MatDialogModule} from "@angular/material/dialog";
+import { SuccessModalComponent } from './modals/success-modal/success-modal.component';
 
 @NgModule({
   declarations: [
@@ -32,12 +37,17 @@ import { HeaderComponent } from './components/header/header.component';
     HomepageComponent,
     LearningPageComponent,
     SafePipe,
-    HeaderComponent
+    HeaderComponent,
+    RewardComponent,
+    SuccessModalComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
+    NoopAnimationsModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
