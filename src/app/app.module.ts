@@ -17,6 +17,7 @@ import 'prismjs/components/prism-python.min';
 import 'prismjs/components/prism-rust.min';
 import 'prismjs/components/prism-typescript';
 import 'prismjs/components/prism-scss';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import 'prismjs/components/prism-scss';
     QuestionComponent,
     RustConsoleComponent,
     HomepageComponent,
-    LearningPageComponent
+    LearningPageComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

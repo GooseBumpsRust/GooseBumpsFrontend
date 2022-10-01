@@ -1,5 +1,35 @@
 @import "~prismjs/themes/prism-dark.css";
 
-body{
-  margin:0;
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
+@import url('https://fonts.googleapis.com/css?family=VT323');
+@import url('https://fonts.googleapis.com/css?family=Silkscreen');
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+  color: rgb(50, 47, 47);
+  font-family: "Lato";    
+  background: url(assets/images/clouds.png) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+  background-size: cover;
+  animation: gradient 110s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+      background-position: 0% 50%;
+  }
+  50% {
+      background-position: 100% 50%;
+  }
+  100% {
+      background-position: 0% 50%;
+  }
 }
