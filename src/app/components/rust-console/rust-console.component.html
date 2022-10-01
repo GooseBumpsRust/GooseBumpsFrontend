@@ -1,7 +1,16 @@
-<textarea [(ngModel)]='code' rows="10" cols="50" name="console" ></textarea>
+<div class="console">
+  <label for="rustCompiler">&nbsp;🚀 Let's test the RUST Code...</label>
+  <textarea id="rustCompiler" [(ngModel)]='code' rows="10" cols="50" name="console" ></textarea>
+</div>
+
 <div class="result-container" *ngIf="!isLoading || !consoleResult">
   <span>{{consoleResult}}</span>
   <div class="loader"  *ngIf="isLoading" ></div>
-
 </div>
-<button (click)="runScript()">run</button>
+
+<div class="wrap">
+  <button (click)="runScript()" class="button">RUN</button>
+</div>
+
+<div>&nbsp;</div>
+<div>&nbsp;</div>

@@ -1,15 +1,16 @@
 {
   "questions": [
     {
-      "title": "loop",
-      "code_challenge": "<pre prism class=\"dark\">\n var x = 1; \n var y = 2; \n </pre>",
-      "code_rust":  "<pre prism class=\"dark\"> \n var x = 1; \n var y = 2; \n </pre>",
-      "question": "question",
-      "init_console": "rust code with fn main()",
-      "result_console": "good result to compare to api console result",
-      "badge_name": "badge name",
-      "badge_description": "badge description",
-      "badge_image": "badge image url"
+      "title": "Chapter 1.x - Basic Functions: Loops",
+      "code_challenge": "Let's take a closer look at how we have solved loops in python so far\n---------------------------------------------------------------\n\n fruits = ['apple', 'banana', 'cherry'] \n\n for x in fruits: \n \u200B\u200B print(x) \n\n\n RESULT\n--------------------------------------------------------------- \napple\n banana\ncherry",
+      "code_rust":  "And now let's take a closer look at what it might look like here within RUST\n---------------------------------------------------------------\n\n let fruits = &['apples', 'banana', 'cherry'];\n\nfor fruit in fruits {\n \u200B \u200B \u200B println!(fruit);\n}",
+      "question": "So now a task for you to try out a loop in RUST and test it yourself right away. \n\n Make a loop that counts from 1 to 10 and prints it to the console. Make sure that you choose everything correctly in the declaration of the variable. \n\nTake good care of the output also, it's not so simple what you expect 😎",
+      "init_console": "fn main() {let mut i = 1; while i <= 10 { print!(\"{:#?}\", i);i = i + 1; } }",
+      "result_console": "12345678910",
+      "badge_name": "Badge Beginner",
+      "badge_description": "Beginner Bage for Basic Functions: Loops",
+      "badge_image": "assets/images/badge_beginner.png",
+      "lang": "EN-en"
     }
   ]
 }
