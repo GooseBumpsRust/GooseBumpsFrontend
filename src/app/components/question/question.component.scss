@@ -1,10 +1,14 @@
 .question-container{
-  background: #333;
-  color: #FFF;
+  background: rgb(231, 196, 196);
+  color: rgb(29, 3, 3);
   margin: 20px;
   border-radius: 7px;
   padding: 50px;
-  min-height: calc(50vh - 50px);
-  height: 100%;
-
+  min-height: calc(10vh - 50px);
+  height: 10%;
+  white-space: pre-line;
+  opacity: 0.9;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  font-family: 'Press Start 2P';
+  font-size: 14px;
 }

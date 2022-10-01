@@ -20,3 +20,228 @@
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
+
+.console {
+  width: calc(100% - 40px);
+}
+
+label {
+  margin-left: 20px;
+  display: block;
+  margin-bottom: 0px;
+  background-color: rgb(240, 178, 178);
+  opacity: 0.8;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: calc(100% - 1px);
+}
+
+textarea {
+  margin-left: 20px;
+  padding: 10px;
+  max-width: 100%;
+  width: 100%;
+  line-height: 1.5;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 20px;
+}
+
+.wrap {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 10px;
+}
+
+.button {
+  width: 140px;
+  height: 45px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000;
+  background-color: #fff;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+}
+
+.button:hover {
+  background-color: #2EE59D;
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+}
+
+.result-container {
+  padding: 20px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  margin-left: 20px;
+  background-color: rgb(240, 178, 178);
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  width: calc(100% - 40px);
+}
+
+// -------------- DETAILS MODAL
+
+.details-modal {
+  background: #ffffff;
+  border-radius: 0.5em;
+  box-shadow: 0 10px 20px rgba(black, 0.2);
+  left: 50%;
+  max-width: 90%;
+  pointer-events: none;
+  position: absolute;
+  top: 1320px;
+  transform: translate(-50%, -50%);
+  width: 60em;
+  text-align: left;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+
+  // -------------- CLOSE
+
+  .details-modal-close {
+    align-items: center;
+    color: #111827;
+    display: flex;
+    height: 4.5em;
+    justify-content: center;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 4.5em;
+
+    svg {
+      display: block;
+    }
+  }
+
+  // -------------- TITLE
+
+  .details-modal-title {
+    color: #111827;
+    padding: 1.5em 2em;
+    pointer-events: all;
+    position: relative;
+    width: calc(100% - 4.5em);
+
+    h1 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      line-height: normal;
+    }
+  }
+
+  // -------------- CONTENT
+
+  .details-modal-content {
+    border-top: 1px solid #e0e0e0;
+    padding: 2em;
+    pointer-events: all;
+    overflow: auto;
+  }
+}
+
+// -------------- OVERLAY
+
+.details-modal-overlay {
+  transition: opacity 0.2s ease-out;
+  pointer-events: none;
+  background: rgba(#0f172a, 0.8);
+  position: fixed;
+  opacity: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  top: 0;
+
+  details[open] & {
+    pointer-events: all;
+    opacity: 0.5;
+  }
+}
+
+// -------------- DETAILS
+
+details {
+  summary {
+    list-style: none;
+      
+    &:focus {
+      outline: none;
+    }
+    &::-webkit-details-marker {
+      display: none;
+    }
+  }
+}
+
+// -------------- OTHER
+
+code {
+  font-family: Monaco, monospace;
+  line-height: 100%;
+  background-color: #2d2d2c;
+  padding: 0.1em 0.4em;
+  letter-spacing: -0.05em;
+  word-break: normal;
+  border-radius: 7px;
+  color: white;
+  font-weight: normal;
+  font-size: 1.75rem;
+  position: relative;
+  top: -2px;
+}
+
+.container {
+  text-align: center;
+  max-width: 40em;
+  padding: 2em;
+
+  > h1 {
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: normal;
+    color: #111827;
+  }
+
+  > p {
+    margin-top: 2em;
+    margin-bottom: 2em;
+    text-align: center;
+  }
+
+  sup {
+    font-size: 1rem;
+    margin-left: 0.25em;
+    opacity: 0.5;
+    position: relative;
+  }
+}
+
+.badge_txt {
+  font-family: 'Press Start 2P';
+  font-size: 19px;
+  margin-bottom: 10px;
+}
+
+.badge_title {
+  font-family: 'Press Start 2P';
+  margin-bottom: 10px;
+}
