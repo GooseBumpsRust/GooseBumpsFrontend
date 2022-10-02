@@ -12,6 +12,8 @@ import {SuccessModalComponent} from "../../modals/success-modal/success-modal.co
 export class RustConsoleComponent implements OnInit, AfterViewInit {
   @Input()
   code: string = "";
+  @Input()
+  result: string = "";
   @ViewChild('rustConsole') rustConsole: HTMLIFrameElement;
 
   codeUrl: string | undefined ;
@@ -62,9 +64,12 @@ export class RustConsoleComponent implements OnInit, AfterViewInit {
           message = answer.error;
         } else {
           message = answer.result
-          setTimeout(() =>{
-            this.openModal();
-          },1500);
+          if (answer.result === this.result) {
+            setTimeout(() =>{
+              this.openModal();
+            },1500);
+          }
+
         }
         this.consoleResult = message;
         if(message == PythonJson.questions[0].result_console) {

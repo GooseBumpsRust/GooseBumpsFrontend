@@ -71,5 +71,5 @@ export class AppComponent {
       this.isInGoodNetwork = false;
     })
   }
-  
+
 }

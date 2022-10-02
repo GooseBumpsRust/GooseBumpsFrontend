@@ -13,6 +13,7 @@ export class LearningPageComponent implements OnInit {
   title: string = '';
   pythonJson = PythonJson
   init_console: string= '';
+  result: string = '';
 
   constructor() {
     console.log(this.pythonJson);
@@ -22,7 +23,7 @@ export class LearningPageComponent implements OnInit {
     this.code_challenge = this.pythonJson.questions[0].code_challenge;
     this.title = this.pythonJson.questions[0].title;
     this.init_console = this.pythonJson.questions[0].init_console;
-
+    this.result = this.pythonJson.questions[0].result_console;
   }
 
   ngOnInit(): void {

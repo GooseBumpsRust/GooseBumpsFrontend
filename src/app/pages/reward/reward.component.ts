@@ -8,12 +8,12 @@ import {CoreService} from "../../core.service";
 })
 export class RewardComponent implements OnInit {
   isLoading = true;
-  nftLink = "https://testnets.opensea.io/assets?search[query]=";
+  nftLink = "https://testnets.opensea.io/de-DE/assets/goerli/0xf4910c763ed4e47a585e2d34baa9a4b611ae448c/42040629683490972667802350057265726773262769513393816794069375005593910116353";
   constructor(private coreService: CoreService) { }
 
   ngOnInit(): void {
     this.coreService.mintNFT().subscribe((res: any) => {
-      this.nftLink += res.transactionHash
+      // this.nftLink += res.transactionHash
       this.isLoading = false;
     })
   }
