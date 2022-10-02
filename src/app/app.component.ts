@@ -16,8 +16,6 @@ export class AppComponent {
   title = 'goosebumps-app';
   contractAbiObj = (contractAbi as any)
 
-  CONTRACT_ADDRESS = environment.CONTRACT_ADDRESS;
-  networkChainId = environment.networkChainId;
   account: string= '';
   isInGoodNetwork: boolean = false;
   value: any;
@@ -30,10 +28,7 @@ export class AppComponent {
     window.ethereum.on('chainChanged', (id: any) => {
       console.log(id);
     })
-    window.ethereum.on("NewEpicNFTMinted", (from:any, tokenId:any) => {
-      console.log(from, tokenId.toNumber())
-      alert(`Hey there! We've minted your NFT. It may be blank right now. It can take a max of 10 min to show up on OpenSea. Here's the link: <https://testnets.opensea.io/assets/${this.CONTRACT_ADDRESS}/${tokenId.toNumber()}>`)
-    });
+
   }
 
   async loadWeb3() {
@@ -61,27 +56,11 @@ export class AppComponent {
 
   async checkIfWalletIsConnected() {
     const chainId = await window.ethereum.request({method: 'eth_chainId'});
-    console.log('network :', chainId)
-    if (chainId === this.networkChainId) {
-      this.isInGoodNetwork = true;
-    } else {
-      this.isInGoodNetwork = false;
-
-    }
     this.cdr.detectChanges()
 
 
   }
 
-  switchNetwork() {
-    window.ethereum.request({
-      method: 'wallet_switchEthereumChain',
-      params: [{chainId: this.networkChainId}], // Check networks.js for hexadecimal network ids
-    }).then((res: any) => {
-      console.log(res)
-      this.isInGoodNetwork = true
-    });
-  }
 
   disconnectWeb3() {
     window.ethereum.request({
@@ -92,37 +71,5 @@ export class AppComponent {
       this.isInGoodNetwork = false;
     })
   }
-
-
-  async mintNFT() {
-    try {
-      const { ethereum } = window;
-
-      if (ethereum) {
-        const provider = new providers.Web3Provider(ethereum);
-        const signer = provider.getSigner();
-        const connectedContract = new Contract(this.CONTRACT_ADDRESS, this.contractAbiObj.abi, signer);
-        connectedContract.on("NewEpicNFTMinted", (from, tokenId) => {
-          console.log(from, this.account, tokenId.toNumber(), from ==  this.account)
-
-          if(from.toLowerCase() ==  this.account?.toLowerCase()){
-            alert(`${from} / ${this.account}. Here's the link: <https://testnets.opensea.io/assets/${this.CONTRACT_ADDRESS}/${tokenId.toNumber()}>`)
-          }
-        });
-
-        console.log("Going to pop wallet now to pay gas...")
-        let nftTxn = await connectedContract['makeAnEpicNFT']();
-
-        console.log("Mining...please wait.")
-        await nftTxn.wait();
-
-        console.log(`Mined, see transaction: https://rinkeby.etherscan.io/tx/${nftTxn.hash}`);
-
-      } else {
-        console.log("Ethereum object doesn't exist!");
-      }
-    } catch (error) {
-      console.log(error)
-    }
-  }
+  
 }
