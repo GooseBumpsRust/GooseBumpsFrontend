@@ -7,6 +7,7 @@ import {environment} from "../environments/environment";
 })
 export class CoreService {
   account: string | undefined;
+  userId: string | undefined;
   constructor(private http: HttpClient) { }
 
   createUser(publicId: string) {
@@ -28,11 +29,11 @@ export class CoreService {
   }
 
   mintNFT(){
-    const publicId = this.account ;
+    const Ethaddress = this.account ;
     const chalengeId = 'python';
-    return this.http.post(environment.back_url + '/mint-nft/', {
-      "userId": publicId,
-      "challengeId": chalengeId,
+    return this.http.post(environment.back_url + '/transfer-nft/', {
+      "toAddress": Ethaddress,
+      "tokenId": 0,
     });
   }
 

@@ -3,7 +3,7 @@
     <a href="/"><img src="../../../assets/images/logo2_transparent.png"></a>
   </div>
 
-  <div class="wallet-data-container">
+  <div class="wallet-data-container" *ngIf="account">
     <span class="wallet-label">WALLET ID:</span>
     <span class="wallet-account">{{account}}</span>
     <button  (click)="disconnectWeb3()" *ngIf="account">disconnect wallet</button>

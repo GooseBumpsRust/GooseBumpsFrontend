@@ -44,7 +44,10 @@ export class AppComponent {
       let accounts = await window.ethereum.request({method: "eth_requestAccounts"});
       this.account = accounts[0]
       this.coreService.account = this.account;
-      this.coreService.createUser(this.account)
+      this.coreService.createUser(this.account).subscribe((res: any) => {
+        console.log(res)
+        this.coreService.userId = res.userId
+      });
       console.log('account', accounts[0])
       this.checkIfWalletIsConnected();
 

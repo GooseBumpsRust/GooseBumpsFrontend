@@ -8,17 +8,20 @@ import {CoreService} from "../../core.service";
 })
 export class RewardComponent implements OnInit {
   isLoading = true;
-  nftLink = '';
+  nftLink = "https://testnets.opensea.io/assets?search[query]=";
   constructor(private coreService: CoreService) { }
 
   ngOnInit(): void {
     this.coreService.mintNFT().subscribe((res: any) => {
-      console.log(res);
+      this.nftLink += res.transactionHash
       this.isLoading = false;
     })
   }
 
   goToOpenSea() {
-    window.location.href = this.nftLink;
+    window.open(
+      this.nftLink,
+      '_blank'
+    );
   }
 }
